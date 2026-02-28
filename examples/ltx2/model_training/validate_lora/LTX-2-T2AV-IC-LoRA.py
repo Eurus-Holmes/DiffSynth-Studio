@@ -33,7 +33,7 @@ negative_prompt = "blurry, out of focus, overexposed, underexposed, low contrast
 height, width, num_frames = 512, 768, 81
 ref_scale_factor = 2
 frame_rate = 24
-input_video = VideoData("data/examples/wan/depth_video.mp4", height=height // ref_scale_factor // 2, width=width // ref_scale_factor // 2)
+input_video = VideoData("data/example_video_dataset/ltx2/depth_video.mp4", height=height // ref_scale_factor // 2, width=width // ref_scale_factor // 2)
 input_video = input_video.raw_data()
 video, audio = pipe(
     prompt=prompt,

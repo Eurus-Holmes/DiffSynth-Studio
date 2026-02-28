@@ -122,8 +122,8 @@ class LTX2AudioVideoPipeline(BasePipeline):
                     inputs_shared["input_images_strength"], latent.clone())
                 inputs_shared.update({"input_latents_video": initial_latents, "denoise_mask_video": denoise_mask_video})
             # remove in-context video control in stage 2
-            inputs_shared.pop("in_context_video_latents")
-            inputs_shared.pop("in_context_video_positions")
+            inputs_shared.pop("in_context_video_latents", None)
+            inputs_shared.pop("in_context_video_positions", None)
 
             # initialize latents for stage 2
             inputs_shared["video_latents"] = self.scheduler.sigmas[0] * denoise_mask_video * inputs_shared[
